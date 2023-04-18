@@ -17,7 +17,7 @@ public class Generic {
 
     public static void main(String[] args) {
         Generic gen = new Generic();
-        gen.Integer(67,89, 78);
+        gen.Integer(100,89, 78);
     }
 }
 
