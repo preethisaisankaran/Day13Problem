@@ -1,32 +1,47 @@
 package com.day13problem;
 
-public class Generic{
-    public static <E extends Comparable> void printArray(E a, E b, E c) {
-        E max = a;
+public class Generic<T extends Comparable<T>> {
 
-        if (b.compareTo(max) > 0) {
-            max = b;
+        T a;
+        T b;
+        T c;
+
+        public Generic(T a, T b, T c) {
+            this.a = a;
+            this.b = b;
+            this.c = c;
+
+            T max = a;
+
+            if (b.compareTo(max) > 0) {
+                max = b;
+
+            }
+            if (c.compareTo(max) > 0) {
+                max = c;
+            }
+            System.out.println(max);
 
         }
-       if (c.compareTo(max) > 0) {
-           max = c;
-       }
-       System.out.println(max);
-   }
+
+
+        public static void main(String[] args) {
+            com.day13problem.GenericClass<Integer> intgen = new com.day13problem.GenericClass<Integer>(10,20,30);
+            com.day13problem.GenericClass<Float> floatgen = new com.day13problem.GenericClass<Float>(3.5F,6.7F,8.9f);
+            com.day13problem.GenericClass<String> stringgen = new com.day13problem.GenericClass<String>("Apple","Banana","Peach");
 
 
 
 
 
-    public static void main(String[] args) {
-        Generic gen = new Generic();
-        gen.printArray(100, 500, 700);
-        gen.printArray(3.5f, 6.8f, 2.5f);
-        gen.printArray("Apple", "Peach", "Banana");
-
-
-
+        }
 
     }
-}
+
+
+
+
+
+
+
 
